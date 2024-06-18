@@ -26,7 +26,16 @@
             padding: 0;
             display: flex;
         }
-        
+            html, body {
+            width: 100%;
+            overflow-x: hidden; /* Prevent horizontal overflow */
+        }
+          .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1030; 
+        }
         
     li {
             margin-right: 10px;
