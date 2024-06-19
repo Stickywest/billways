@@ -9,7 +9,7 @@
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Your custom CSS (if any) -->
-    <style>
+   <style>
         a {
             display: inline-block;
             padding: 10px 20px;
@@ -70,38 +70,6 @@
         .card {
             margin: 15px;
         }
-        .saving-plan-table {
-    width: 100%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    border-radius: 5px;
-}
-
-.saving-plan-table th, .saving-plan-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-}
-
-.saving-plan-table th {
-    background-color: #1261A0;
-    color: white;
-}
-
-#toggleSavingPlan {
-    display: block;
-    margin: auto;
-    padding: 10px 20px; /* Adjust padding for better appearance */
-}
-
-@media (max-width: 767.98px) {
-    .saving-plan-table th, .saving-plan-table td {
-        padding: 5px;
-    }
-}
-
         footer {
             width: 100%;
             background-color: #333;
@@ -153,6 +121,39 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
+        }
+
+        @keyframes tallyMoney {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+
+        .animate-money {
+            animation: tallyMoney 0.5s alternate infinite ease-in-out;
+        }
+
+        .table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        .table th, .table td {
+            padding: 8px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .table th {
+            background-color: #f2f2f2;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
         }
     </style>
 </head>
@@ -223,56 +224,54 @@
         </div>
     </div>
     <!-- Button to toggle visibility of saving plan table -->
-<button id="toggleSavingPlan" class="btn btn-primary mt-3">See Our Saving Plan</button>
-
-<!-- Saving Plan Table -->
-<!-- Button to toggle visibility of saving plan table -->
-<button id="toggleSavingPlan" class="btn btn-primary mt-3 mb-3 px-4">See Our Saving Plan</button>
-
-<!-- Saving Plan Table -->
-<div class="container mt-3" id="savingPlanTable" style="display: none;">
-    <div class="table-responsive">
-        <table class="table saving-plan-table">
-            <thead>
-                <tr>
-                    <th>Period</th>
-                    <th>Daily Savings</th>
-                    <th>Weekly Savings</th>
-                    <th>Monthly Savings</th>
-                    <th>Savings After 3 Months</th>
-                    <th>Amount Eligible for Loan (3x Savings)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Minimum</td>
-                    <td>20</td>
-                    <td>140</td>
-                    <td>600</td>
-                    <td>1,800</td>
-                    <td>5,400</td>
-                </tr>
-                <tr>
-                    <td>Moderate</td>
-                    <td>50</td>
-                    <td>350</td>
-                    <td>1,500</td>
-                    <td>4,500</td>
-                    <td>13,500</td>
-                </tr>
-                <tr>
-                    <td>Aggressive</td>
-                    <td>100</td>
-                    <td>700</td>
-                    <td>3,000</td>
-                    <td>9,000</td>
-                    <td>27,000</td>
-                </tr>
-            </tbody>
-        </table>
+  <!-- Saving Plan Table -->
+    <div class="container mt-3" id="savingPlanTable" style="display: none;">
+        <div class="table-responsive">
+            <table class="table saving-plan-table">
+                <thead>
+                    <tr>
+                        <th>Period</th>
+                        <th>Daily Savings</th>
+                        <th>Weekly Savings</th>
+                        <th>Monthly Savings</th>
+                        <th class="animate-money">Savings After 3 Months</th>
+                        <th>Amount Eligible for Loan (3x Savings)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Minimum</td>
+                        <td>20</td>
+                        <td>140</td>
+                        <td>600</td>
+                        <td class="animate-money">1,800</td>
+                        <td>5,400</td>
+                    </tr>
+                    <tr>
+                        <td>Moderate</td>
+                        <td>50</td>
+                        <td>350</td>
+                        <td>1,500</td>
+                        <td class="animate-money">4,500</td>
+                        <td>13,500</td>
+                    </tr>
+                    <tr>
+                        <td>Aggressive</td>
+                        <td>100</td>
+                        <td>700</td>
+                        <td>3,000</td>
+                        <td class="animate-money">9,000</td>
+                        <td>27,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
 
+    <!-- Button to toggle saving plan table visibility -->
+    <div class="container text-center mt-3">
+        <button type="button" class="btn btn-primary" onclick="toggleSavingPlan()">See Our Saving Plan</button>
+    </div>
     
 
     <!-- Footer -->
