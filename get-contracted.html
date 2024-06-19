@@ -5,25 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         .header {
-            background-color:#1261A0;
+            background-color: #1261A0;
             color: white;
             padding: 50px 0;
             text-align: center;
         }
 
-        .team-member img {
-            border-radius: 50%;
-            margin-bottom: 15px;
+        .values-section {
+            background-color: #f8f9fa;
+            padding: 50px 0;
         }
 
-        .team-member {
+        .value-card {
+            border: none;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
 
-        .team-member h5 {
+        .value-card .fa-icon {
+            font-size: 2.5rem;
+            color: #1261A0;
+            margin-bottom: 15px;
+        }
+
+        .value-card h5 {
             margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        .value-card p {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        footer h5 {
+            margin-bottom: 1rem;
+        }
+
+        footer ul {
+            padding-left: 0;
+        }
+
+        footer ul li {
+            list-style: none;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 767.98px) {
+            .text-md-right {
+                text-align: left !important;
+            }
+            footer .col-md-6 {
+                margin-bottom: 1rem;
+            }
+            footer .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
@@ -31,50 +102,72 @@
     <header class="header">
         <div class="container">
             <h1>About Us</h1>
-            <p>Learn more about our mission, vision, and team.</p>
+            <p>Learn more about our mission, vision, and core values.</p>
         </div>
     </header>
 
     <section class="container mt-5">
         <h2>Our Mission</h2>
-        <p>Our mission is to provide the best services and products to our customers. We strive for excellence in everything we do and aim to exceed our customers' expectations.</p>
+        <p>An epitome of financial investment with the most rewarding returns.</p>
 
         <h2>Our Vision</h2>
-        <p>Our vision is to be a leader in our industry, known for our commitment to quality and innovation. We envision a future where our solutions make a positive impact on society.</p>
+        <p>Developing financial products suited towards meeting customer needs and uplifting member's social economic welfare.</p>
     </section>
 
-    <section class="container mt-5">
-        <h2>Meet Our Team</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="team-member">
-                    <img src="https://via.placeholder.com/150" alt="Team Member 1" class="img-fluid">
-                    <h5>Solomon</h5>
-                    <p>CEO</p>
+    <section class="values-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Core Values</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="value-card">
+                        <i class="fas fa-balance-scale fa-icon"></i>
+                        <h5>Integrity</h5>
+                        <p>We uphold the highest standards of integrity in all of our actions.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="team-member">
-                    <img src="https://via.placeholder.com/150" alt="Team Member 2" class="img-fluid">
-                    <h5>john Doe</h5>
-                    <p>CTO</p>
+                <div class="col-md-4 mb-4">
+                    <div class="value-card">
+                        <i class="fas fa-eye fa-icon"></i>
+                        <h5>Transparency</h5>
+                        <p>We believe in being transparent and honest in all our dealings.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="team-member">
-                    <img src="https://via.placeholder.com/150" alt="Team Member 3" class="img-fluid">
-                    <h5>Doe john</h5>
-                    <p>COO</p>
+                <div class="col-md-4 mb-4">
+                    <div class="value-card">
+                        <i class="fas fa-lightbulb fa-icon"></i>
+                        <h5>Innovation</h5>
+                        <p>We foster innovation to drive growth and create value.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="value-card">
+                        <i class="fas fa-tasks fa-icon"></i>
+                        <h5>Accountability</h5>
+                        <p>We are accountable for delivering on our commitments.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="value-card">
+                        <i class="fas fa-handshake fa-icon"></i>
+                        <h5>Trustworthy</h5>
+                        <p>We build trust by consistently delivering on our promises.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="value-card">
+                        <i class="fas fa-equals fa-icon"></i>
+                        <h5>Equity</h5>
+                        <p>We ensure fairness and equity in all our interactions.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-dark text-white mt-5">
+    <footer>
         <div class="container py-4">
             <div class="row">
-              
-                <div class="col-md-6 text-md-right">
+                <div class="col-md-6">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="#" class="text-white">Home</a></li>
@@ -83,7 +176,7 @@
                         <li><a href="#" class="text-white">Contact</a></li>
                     </ul>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 text-md-right">
                     <h5>Company Name</h5>
                     <p>&copy; 2024 Company Name. All rights reserved.</p>
                 </div>
