@@ -121,7 +121,32 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
-        }
+        
+       .saving-plan-table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.saving-plan-table th, .saving-plan-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.saving-plan-table th {
+    background-color: #1261A0;
+    color: white;
+}
+
+#toggleSavingPlan {
+    display: block;
+    margin: auto;
+}
+
 
         
     </style>
@@ -192,7 +217,48 @@
             <!-- Add other service cards here -->
         </div>
     </div>
-   
+
+
+    <div class="container mt-3" id="savingPlanTable" style="display: none;">
+    <table class="table saving-plan-table">
+        <thead>
+            <tr>
+                <th>Period</th>
+                <th>Daily Savings</th>
+                <th>Weekly Savings</th>
+                <th>Monthly Savings</th>
+                <th>Savings After 3 Months</th>
+                <th>Amount Eligible for Loan (3x Savings)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Minimum</td>
+                <td>20</td>
+                <td>140</td>
+                <td>600</td>
+                <td>1,800</td>
+                <td>5,400</td>
+            </tr>
+            <tr>
+                <td>Moderate</td>
+                <td>50</td>
+                <td>350</td>
+                <td>1,500</td>
+                <td>4,500</td>
+                <td>13,500</td>
+            </tr>
+            <tr>
+                <td>Aggressive</td>
+                <td>100</td>
+                <td>700</td>
+                <td>3,000</td>
+                <td>9,000</td>
+                <td>27,000</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
   
     
 
@@ -228,7 +294,21 @@
     </footer>
   
 
-
+<script>
+    // JavaScript to toggle visibility of saving plan table
+    document.getElementById('toggleSavingPlan').addEventListener('click', function() {
+        var savingPlanTable = document.getElementById('savingPlanTable');
+        if (savingPlanTable.style.display === 'none') {
+            savingPlanTable.style.display = 'block';
+        } else {
+            savingPlanTable.style.display = 'none';
+        }
+    });
+</script>
+<!-- Include Bootstrap JS (at the end of the body) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   
 </body>
 </html>
