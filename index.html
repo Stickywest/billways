@@ -70,20 +70,7 @@
         .card {
             margin: 15px;
         }
-        .saving-plan-table {
-            width: 100%;
-            margin: 20px auto;
-            border-collapse: collapse;
-        }
-        .saving-plan-table th, .saving-plan-table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-        .saving-plan-table th {
-            background-color: #1261A0;
-            color: white;
-        }
+        
         footer {
             width: 100%;
             background-color: #333;
@@ -136,6 +123,33 @@
                 align-items: flex-start;
             }
         }
+
+
+       .saving-plan-table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.saving-plan-table th, .saving-plan-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.saving-plan-table th {
+    background-color: #1261A0;
+    color: white;
+}
+
+#toggleSavingPlan {
+    display: block;
+    margin: auto;
+}
+
     </style>
 </head>
 <body>
@@ -204,9 +218,11 @@
             <!-- Add other service cards here -->
         </div>
     </div>
+<!-- Button to toggle visibility of saving plan table -->
+<button id="toggleSavingPlan" class="btn btn-primary mt-3">See Our Saving Plan</button>
 
-
-    <div class="container mt-3" id="savingPlanTable" style="display: none;">
+<!-- Saving Plan Table -->
+<div class="container mt-3" id="savingPlanTable" style="display: none;">
     <table class="table saving-plan-table">
         <thead>
             <tr>
@@ -246,7 +262,8 @@
         </tbody>
     </table>
 </div>
-  
+
+
     
 
     <!-- Footer -->
@@ -285,7 +302,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  
 <script>
     // JavaScript to toggle visibility of saving plan table
     document.getElementById('toggleSavingPlan').addEventListener('click', function() {
@@ -297,5 +313,6 @@
         }
     });
 </script>
+
 </body>
 </html>
