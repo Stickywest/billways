@@ -48,7 +48,6 @@
             justify-content: flex-start;
             padding: 20px;
             background-image: url('banner.jpg');
-            max-width: 100%;
             width: 100%; /* Ensure it covers the entire width */
             margin: 0; /* Remove any default margin */
         }
@@ -72,15 +71,6 @@
         .animated-paragraphs .content.active {
             display: block;
             animation: fadeInOut 10s infinite;
-        }
-
-        .animated-paragraphs button {
-            display: none;
-            margin-top: 10px;
-        }
-
-        .animated-paragraphs .content.active button {
-            display: inline-block;
         }
 
         @keyframes fadeInOut {
@@ -235,23 +225,23 @@
         </div>
     </nav>
 
-     <div class="jumbotron">
+    <div class="jumbotron">
         <div class="animated-paragraphs">
             <div class="content active">
                 <p class="lead">Our financial solutions are designed to help manage and grow your money. Choose from a wide bouquet of payment, savings, and borrowing solutions.</p>
-                <button class="btn btn-primary">View More</button>
+                <button class="btn btn-primary" onclick="window.location.href='page1.html'">View More</button>
             </div>
             <div class="content">
                 <p class="lead">Our savings plans are tailored to your needs, offering competitive interest rates and flexible terms.</p>
-                <button class="btn btn-primary">View More</button>
+                <button class="btn btn-primary" onclick="window.location.href='page2.html'">View More</button>
             </div>
             <div class="content">
                 <p class="lead">Request a loan with ease and enjoy low-interest rates and flexible repayment schedules.</p>
-                <button class="btn btn-primary">View More</button>
+                <button class="btn btn-primary" onclick="window.location.href='page3.html'">View More</button>
             </div>
             <div class="content">
                 <p class="lead">Stay informed with our latest updates and financial tips to help you make the best decisions.</p>
-                <button class="btn btn-primary">View More</button>
+                <button class="btn btn-primary" onclick="window.location.href='page4.html'">View More</button>
             </div>
         </div>
     </div>
@@ -398,36 +388,17 @@
             savingPlanTable.style.display = 'none';
         }
     });
-    <script>
+       <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const paragraphs = document.querySelectorAll('.animated-paragraphs p');
-            const buttons = document.querySelectorAll('.animated-paragraphs button');
+            const paragraphs = document.querySelectorAll('.animated-paragraphs .content');
             let index = 0;
-
-            // Array of URLs corresponding to each paragraph/button
-            const urls = [
-                'page1.html',
-                'page2.html',
-                'page3.html',
-                'page4.html'
-            ];
 
             setInterval(() => {
                 paragraphs[index].classList.remove('active');
-                buttons[index].classList.remove('active');
                 index = (index + 1) % paragraphs.length;
                 paragraphs[index].classList.add('active');
-                buttons[index].classList.add('active');
             }, 10000);
-
-            buttons.forEach((button, idx) => {
-                button.addEventListener('click', () => {
-                    window.location.href = urls[idx];
-                });
-            });
         });
     </script>
-
-
 </body>
 </html>
