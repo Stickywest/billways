@@ -50,26 +50,32 @@
             padding: 20px;
             background-image: url('banner.jpg');
             max-width: 100%;
-            width:100%;
-            margin:0;
+            width: 100%; /* Ensure it covers the entire width */
+            margin: 0; /* Remove any default margin */
         }
 
-        .paragraph-container {
-            position: relative;
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .paragraph {
+        .animated-paragraphs {
             position: absolute;
-            width: 100%;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
         }
 
-        .paragraph.active {
-            opacity: 1;
+        .animated-paragraphs p {
+            display: none;
+            font-size: 24px;
+        }
+
+        .animated-paragraphs p.active {
+            display: block;
+            animation: fadeInOut 10s infinite;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; }
+            10%, 90% { opacity: 1; }
         }
         .display {
             color: white;
@@ -208,23 +214,14 @@
         </div>
     </nav>
 
-       <div class="container mt-5">
-           <div class="jumbotron">
-        <div class="jumbotron paragraph-container">
-            <div class="paragraph active">
-                <p class="lead">Our financial solutions are designed to help manage and grow your money.</p>
-                <a href="#" class="btn btn-primary">View More</a>
-            </div>
-            <div class="paragraph">
-                <p class="lead">Choose from a wide bouquet of payment, savings, and borrowing solutions.</p>
-                <a href="#" class="btn btn-primary">View More</a>
-            </div>
-            <div class="paragraph">
-                <p class="lead">We provide tailored financial advice to meet your individual needs.</p>
-                <a href="#" class="btn btn-primary">View More</a>
-            </div>
+    <div class="jumbotron">
+        <div class="animated-paragraphs">
+            <p class="lead active">Our financial solutions are designed to help manage and grow your money. Choose from a wide bouquet of payment, savings, and borrowing solutions.</p>
+            <p class="lead">Our savings plans are tailored to your needs, offering competitive interest rates and flexible terms.</p>
+            <p class="lead">Request a loan with ease and enjoy low-interest rates and flexible repayment schedules.</p>
+            <p class="lead">Stay informed with our latest updates and financial tips to help you make the best decisions.</p>
+            <button class="btn btn-primary mt-3">View More</button>
         </div>
-           </div>
     </div>
 
     <!-- Main Banner 
@@ -371,18 +368,17 @@
     });
 </script>
 
-      <script>
-        $(document).ready(function() {
-            let currentParagraph = 0;
-            const paragraphs = $('.paragraph');
+   <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const paragraphs = document.querySelectorAll('.animated-paragraphs p');
+            let index = 0;
 
-            setInterval(function() {
-                paragraphs.eq(currentParagraph).removeClass('active');
-                currentParagraph = (currentParagraph + 1) % paragraphs.length;
-                paragraphs.eq(currentParagraph).addClass('active');
-            }, 4000); // Change paragraph every 4 seconds
+            setInterval(() => {
+                paragraphs[index].classList.remove('active');
+                index = (index + 1) % paragraphs.length;
+                paragraphs[index].classList.add('active');
+            }, 10000);
         });
-    </script>
 
 </body>
 </html>
