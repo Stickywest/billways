@@ -388,15 +388,15 @@
             savingPlanTable.style.display = 'none';
         }
     });
-       <script>
+         <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const paragraphs = document.querySelectorAll('.animated-paragraphs .content');
+            const contents = document.querySelectorAll('.animated-paragraphs .content');
             let index = 0;
 
             setInterval(() => {
-                paragraphs[index].classList.remove('active');
-                index = (index + 1) % paragraphs.length;
-                paragraphs[index].classList.add('active');
+                contents[index].classList.remove('active');
+                index = (index + 1) % contents.length;
+                contents[index].classList.add('active');
             }, 10000);
         });
     </script>
