@@ -70,13 +70,15 @@
             margin-bottom: 10px;
         }
 
-        .animated-paragraphs p.active {
+        .animated-paragraphs p.active,
+        .animated-paragraphs button.active {
             display: block;
             animation: fadeInOut 10s infinite;
         }
 
         .animated-paragraphs button {
             margin-top: 10px;
+            display: none;
         }
 
         @keyframes fadeInOut {
@@ -231,13 +233,16 @@
         </div>
     </nav>
 
-    <div class="jumbotron">
+     <div class="jumbotron">
         <div class="animated-paragraphs">
             <p class="lead active">Our financial solutions are designed to help manage and grow your money. Choose from a wide bouquet of payment, savings, and borrowing solutions.</p>
+            <button class="btn btn-primary active">View More</button>
             <p class="lead">Our savings plans are tailored to your needs, offering competitive interest rates and flexible terms.</p>
+            <button class="btn btn-primary">View More</button>
             <p class="lead">Request a loan with ease and enjoy low-interest rates and flexible repayment schedules.</p>
+            <button class="btn btn-primary">View More</button>
             <p class="lead">Stay informed with our latest updates and financial tips to help you make the best decisions.</p>
-            <button class="btn btn-primary mt-3">View More</button>
+            <button class="btn btn-primary">View More</button>
         </div>
     </div>
 
@@ -385,17 +390,21 @@
     });
 </script>
 
-   <script>
+       <script>
         document.addEventListener('DOMContentLoaded', function () {
             const paragraphs = document.querySelectorAll('.animated-paragraphs p');
+            const buttons = document.querySelectorAll('.animated-paragraphs button');
             let index = 0;
 
             setInterval(() => {
                 paragraphs[index].classList.remove('active');
+                buttons[index].classList.remove('active');
                 index = (index + 1) % paragraphs.length;
                 paragraphs[index].classList.add('active');
+                buttons[index].classList.add('active');
             }, 10000);
         });
+    </script>
 
 </body>
 </html>
