@@ -39,7 +39,7 @@
         li {
             margin-right: 10px;
         }
-        .jumbotron {
+              .jumbotron {
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -70,15 +70,19 @@
             margin-bottom: 10px;
         }
 
-        .animated-paragraphs p.active,
-        .animated-paragraphs button.active {
+        .animated-paragraphs p.active {
             display: block;
             animation: fadeInOut 10s infinite;
         }
 
         .animated-paragraphs button {
-            margin-top: 10px;
             display: none;
+            margin-top: 10px;
+        }
+
+        .animated-paragraphs button.active {
+            display: inline-block;
+            animation: fadeInOut 10s infinite;
         }
 
         @keyframes fadeInOut {
@@ -235,15 +239,22 @@
 
      <div class="jumbotron">
         <div class="animated-paragraphs">
-            <p class="lead active">Our financial solutions are designed to help manage and grow your money. Choose from a wide bouquet of payment, savings, and borrowing solutions.
-            register and be a member at Billways Sacco LTD</p>
-            <button  class="btn btn-primary active">Register</button>
-            <p class="lead">Our savings plans are tailored to your needs, offering competitive interest rates and flexible terms.We offer various saving products tailored to meet our needs</p>
-            <button  class="btn btn-primary">View More</button>
-            <p class="lead">Request a loan with ease and enjoy low-interest rates and flexible repayment schedules.</p>
-            <button href="for-brokers.html" class="btn btn-primary">View More</button>
-            <p class="lead">Stay informed with our latest updates and financial tips to help you make the best decisions.</p>
-            <button href="#" class="btn btn-primary">View More</button>
+            <div class="content active">
+                <p class="lead">Our financial solutions are designed to help manage and grow your money. Choose from a wide bouquet of payment, savings, and borrowing solutions.</p>
+                <button class="btn btn-primary">View More</button>
+            </div>
+            <div class="content">
+                <p class="lead">Our savings plans are tailored to your needs, offering competitive interest rates and flexible terms.</p>
+                <button class="btn btn-primary">View More</button>
+            </div>
+            <div class="content">
+                <p class="lead">Request a loan with ease and enjoy low-interest rates and flexible repayment schedules.</p>
+                <button class="btn btn-primary">View More</button>
+            </div>
+            <div class="content">
+                <p class="lead">Stay informed with our latest updates and financial tips to help you make the best decisions.</p>
+                <button class="btn btn-primary">View More</button>
+            </div>
         </div>
     </div>
 
@@ -389,33 +400,32 @@
             savingPlanTable.style.display = 'none';
         }
     });
-</script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const contents = document.querySelectorAll('.animated-paragraphs .content');
+            const paragraphs = document.querySelectorAll('.animated-paragraphs p');
+            const buttons = document.querySelectorAll('.animated-paragraphs button');
             let index = 0;
 
             // Array of URLs corresponding to each paragraph/button
             const urls = [
-                'register.html',
-                'products.html',
-                'for-brokers.html',
-                '#'
+                'page1.html',
+                'page2.html',
+                'page3.html',
+                'page4.html'
             ];
 
             setInterval(() => {
-                contents[index].classList.remove('active');
-                index = (index + 1) % contents.length;
-                contents[index].classList.add('active');
+                paragraphs[index].classList.remove('active');
+                buttons[index].classList.remove('active');
+                index = (index + 1) % paragraphs.length;
+                paragraphs[index].classList.add('active');
+                buttons[index].classList.add('active');
             }, 10000);
 
-            contents.forEach((content, idx) => {
-                const button = content.querySelector('button');
-                if (button) {
-                    button.addEventListener('click', () => {
-                        window.location.href = urls[idx];
-                    });
-                }
+            buttons.forEach((button, idx) => {
+                button.addEventListener('click', () => {
+                    window.location.href = urls[idx];
+                });
             });
         });
     </script>
