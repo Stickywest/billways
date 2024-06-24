@@ -57,6 +57,21 @@
             margin: 0;
             white-space: normal;
         }
+       .paragraph-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        .paragraph {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .paragraph.active {
+            opacity: 1;
+        }
         .display {
             color: white;
             margin-bottom: 10px;
@@ -164,7 +179,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="row">
-           <img alt="" style="height:70px;width:70px;" src="logo.jpg">  
+           <img alt="" style="height:70px;width:80px;" src="logo.jpg">  
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -194,10 +209,27 @@
         </div>
     </nav>
 
-    <!-- Main Banner -->
+       <div class="container mt-5">
+        <div class="jumbotron paragraph-container">
+            <div class="paragraph active">
+                <p class="lead">Our financial solutions are designed to help manage and grow your money.</p>
+                <a href="#" class="btn btn-primary">View More</a>
+            </div>
+            <div class="paragraph">
+                <p class="lead">Choose from a wide bouquet of payment, savings, and borrowing solutions.</p>
+                <a href="#" class="btn btn-primary">View More</a>
+            </div>
+            <div class="paragraph">
+                <p class="lead">We provide tailored financial advice to meet your individual needs.</p>
+                <a href="#" class="btn btn-primary">View More</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Banner 
     <div class="jumbotron">
         <p class="lead">Our financial solutions are designed to help manage and grow your money. Choose from a wide bouquet of payment, savings, and borrowing solutions.</p>
-    </div>
+    </div>-->
 
     <!-- Service Cards -->
     <div class="container">
@@ -308,7 +340,7 @@
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
-                    <span>+123 456 7890</span>
+                    <span>+0700032800</span>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
@@ -324,6 +356,8 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    
 <script>
     // JavaScript to toggle visibility of saving plan table
     document.getElementById('toggleSavingPlan').addEventListener('click', function() {
@@ -335,6 +369,19 @@
         }
     });
 </script>
+
+      <script>
+        $(document).ready(function() {
+            let currentParagraph = 0;
+            const paragraphs = $('.paragraph');
+
+            setInterval(function() {
+                paragraphs.eq(currentParagraph).removeClass('active');
+                currentParagraph = (currentParagraph + 1) % paragraphs.length;
+                paragraphs.eq(currentParagraph).addClass('active');
+            }, 4000); // Change paragraph every 4 seconds
+        });
+    </script>
 
 </body>
 </html>
