@@ -420,11 +420,14 @@
     <script>
         function toggleContent(button) {
             var hiddenContent = button.previousElementSibling;
+            const lineWithWord = hiddenContent.previousElementSibling;
             if (hiddenContent.style.display === "none" || hiddenContent.style.display === "") {
                 hiddenContent.style.display = "block";
+                lineWithWord.style.display = 'block';
                 button.textContent = "Show Less";
             } else {
                 hiddenContent.style.display = "none";
+                lineWithWord.style.display = 'none';
                 button.textContent = "View More";
             }
         }
