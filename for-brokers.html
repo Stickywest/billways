@@ -13,14 +13,18 @@
             padding: 50px 0;
             text-align: center;
         }
-        .list-unstyled {
-              padding-left: 1em;  /* Adjust padding as needed */
-            }
-            
-            .list-unstyled li {
-              text-indent: -1em;  /* Adjust indentation as needed */
-            }
-
+        .list-unstyled li {
+          position: relative;
+          list-style-type: none;  /* Remove default bullet points */
+        }
+        
+        .list-unstyled li:before {
+          content: "•";  /* Replace with your desired bullet point symbol */
+          position: absolute;
+          left: -1em;  /* Adjust positioning as needed */
+          top: 0.5em;  /* Adjust vertical positioning as needed */
+        }
+        
 
         .loan-section {
             padding: 50px 0;
@@ -213,7 +217,7 @@
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="loan-card">
                         <i class="fas fa-user-friends fa-icon"></i>
-                        <h5>Chama Loans</h5>
+                           <h5>4. Group/Chama Loan</h5>
                         <p>Support your group savings goals with our specialized Chama Loans.</p>
                         <div class="hidden-content">                                  
                          <h5>4. Group/Chama Loan</h5>
