@@ -29,15 +29,25 @@
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+          .loan-card .hidden-content {
+            display: none;
+            text-align: left; /* Align text to the left */
+        }
+
+        .loan-card .hidden-content ul {
+            padding-left: 20px; /* Add padding for indentation */
+            margin: 10px 0; /* Adjust margin for spacing */
+        }
+
+        .loan-card .hidden-content li {
+            margin-bottom: 5px; /* Adjust bottom margin for spacing between items */
+        }
 
         .loan-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
         }
-        p {
-          text-indent: 2em;  /* Adjust indentation as needed */
-        }
-
+      
 
         .loan-card .fa-icon {
             font-size: 3rem;
@@ -72,7 +82,9 @@
         .hidden-content {
             display: none;
             margin-top: 10px;
+        
         }
+        
 
         footer {
             width: 100%;
