@@ -38,20 +38,36 @@
         }
         li {
             margin-right: 10px;
-        }   .jumbotron {
-            background-size: cover;
-            background-position: center;
-            height:100%;
-            height: 100vh;
-            position: relative;
-            display: flex;
-            align-items: flex-end; /* Align items to the bottom */
-            justify-content: flex-start;
-            padding: 20px;
-            background-image: url('flyer-Photoroom.png');
-            width: 100%; /* Ensure it covers the entire width */
-            margin: 0; /* Remove any default margin */
-        }
+        }  .jumbotron {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: flex-end; /* Align items to the bottom */
+    justify-content: flex-start;
+    padding: 20px;
+    background-image: url('flyer-Photoroom.png');
+    width: 100%; /* Ensure it covers the entire width */
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .jumbotron {
+        background-size: contain;
+        height: auto; /* Adjust height for smaller screens */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .animated-paragraphs {
+        padding: 5px;
+    }
+
+    .animated-paragraphs p {
+        font-size: 14px;
+    }
+}
+
 
         .animated-paragraphs {
             position: absolute;
